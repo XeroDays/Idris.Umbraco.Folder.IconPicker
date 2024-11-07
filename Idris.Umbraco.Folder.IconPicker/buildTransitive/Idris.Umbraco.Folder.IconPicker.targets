@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IdrisUmbracoFolderIconPickerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Idris.Umbraco.Folder.IconPicker\**\*.*</IdrisUmbracoFolderIconPickerContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyIdrisUmbracoFolderIconPickerAssets" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <IdrisUmbracoFolderIconPickerContentFiles Include="$(IdrisUmbracoFolderIconPickerContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying Idris.Umbraco.Folder.IconPicker files: $(IdrisUmbracoFolderIconPickerContentFilesPath) - #@(IdrisUmbracoFolderIconPickerContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(IdrisUmbracoFolderIconPickerContentFiles)" DestinationFiles="@(IdrisUmbracoFolderIconPickerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Idris.Umbraco.Folder.IconPicker\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearIdrisUmbracoFolderIconPickerAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <IdrisUmbracoFolderIconPickerDir Include="$(MSBuildProjectDirectory)\App_Plugins\Idris.Umbraco.Folder.IconPicker\" />
+    </ItemGroup>
+    <Message Text="Clear old Idris.Umbraco.Folder.IconPicker data" Importance="high" />
+    <RemoveDir Directories="@(IdrisUmbracoFolderIconPickerDir)" />
+  </Target>
+</Project>
