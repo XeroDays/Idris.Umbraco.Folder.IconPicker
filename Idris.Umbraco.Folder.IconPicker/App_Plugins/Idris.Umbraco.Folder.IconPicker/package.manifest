@@ -1,5 +1,36 @@
 {
-    "id": "Idris.Umbraco.Folder.IconPicker",
-    "name": "Idris.Umbraco.Folder.IconPicker",
-    "allowPackageTelemetry": true
+  "propertyEditors": [
+    {
+      "alias": "Idris.Umbraco.Folder.IconPicker",
+      "name": "Folder Icon Picker",
+      "editor": {
+        "view": "~/App_Plugins/Idris.Umbraco.Folder.IconPicker/views/editor.html",
+        "isReadOnly": false
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Folder Name",
+            "description": "Folder name where all the icons are stored. (Should be in wwwroot)",
+            "key": "folderName",
+            "view": "textstring",
+            "validation": [
+              {
+                "type": "Required"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "javascript": [
+    "~/App_Plugins/Idris.Umbraco.Folder.IconPicker/scripts/editor.controller.js",
+    "~/App_Plugins/Idris.Umbraco.Folder.IconPicker/scripts/panel.controller.js"
+  ],
+
+  "css": [
+    "~/App_Plugins/Idris.Umbraco.Folder.IconPicker/style/idrisfoldericonpicker.css"
+  ]
 }

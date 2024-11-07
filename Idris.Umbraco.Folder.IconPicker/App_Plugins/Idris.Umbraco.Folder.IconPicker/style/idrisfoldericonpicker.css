@@ -1,0 +1,24 @@
+﻿.idris-icon {
+    display: inline-block;
+    max-width: 2.5em;  
+    max-height: 2.5em;  
+    width: auto;  
+    height: auto; 
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.idris-box {
+    display: flex;
+}
+
+.idris-list .idris-icon {
+    padding: 1em;
+}
+
+.idris-list .idris-icon:hover {
+    background: #f9f9fa;   
+}

@@ -1,0 +1,13 @@
+﻿<div ng-controller="idris.foldericoneditorcontroller as vm" class="idris-box">
+    <!-- <svg ng-show="model.value" class="idris-icon" ng-click="vm.edit()" ng-class="model.value">
+        <use ng-attr-href="#{{model.value}}"></use>
+    </svg> -->
+    <img ng-show="model.value" src="{{model.value.Path}}" class="idris-icon" ng-click="vm.edit()" ng-class="model.value">
+
+    <umb-button action="vm.edit()"
+                type="button"
+                button-style="link"
+                label-key="general_edit"
+                icon="icon-edit">
+    </umb-button>
+</div>
