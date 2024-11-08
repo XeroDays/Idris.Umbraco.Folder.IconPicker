@@ -12,8 +12,7 @@
 
         $this.icons = [];
 
-        function close() {
-
+        function close() { 
             $scope.model.close();
         }
 
