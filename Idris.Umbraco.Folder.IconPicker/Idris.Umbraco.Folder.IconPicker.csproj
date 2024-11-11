@@ -19,7 +19,7 @@
     <PackageProjectUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>icons8-new-moon-100.png</PackageIcon>
+    <PackageIcon>plugin-icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   
