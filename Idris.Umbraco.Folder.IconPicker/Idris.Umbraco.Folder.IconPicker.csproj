@@ -38,7 +38,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="C:\Users\User\Downloads\icons8-new-moon-100.png">
+    <None Include="plugin-icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
