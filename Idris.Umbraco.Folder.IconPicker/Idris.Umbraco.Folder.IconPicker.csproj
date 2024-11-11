@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,9 +9,16 @@
   <PropertyGroup>
     <PackageId>Idris.Umbraco.Folder.IconPicker</PackageId>
     <Product>Idris.Umbraco.Folder.IconPicker</Product>
-    <Title>Idris.Umbraco.Folder.IconPicker</Title>
-    <Description>...</Description>
+    <Version>1.0.0</Version>
+    <Title>Folder Icon Picker</Title>
+    <Description>You can list all the icons from a folder and use them directly in the composition or document types.</Description>
     <PackageTags>umbraco plugin package</PackageTags>
+    <Authors>Sayed Muhammad Idrees</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</PackageProjectUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   
   <ItemGroup>
@@ -22,5 +29,12 @@
   <ItemGroup>
     <Content Include="App_Plugins\Idris.Umbraco.Folder.IconPicker\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
