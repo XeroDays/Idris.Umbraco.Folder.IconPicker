@@ -9,7 +9,7 @@
   <PropertyGroup>
     <PackageId>Idris.Umbraco.Folder.IconPicker</PackageId>
     <Product>Idris.Umbraco.Folder.IconPicker</Product>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Title>Folder Icon Picker - Umbraco</Title>
     <Description>You can list all the icons from a folder and use them directly in the composition or document types.</Description>
     <PackageTags>umbraco plugin package</PackageTags>
@@ -19,6 +19,7 @@
     <PackageProjectUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icons8-new-moon-100.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
@@ -33,6 +34,10 @@
 
   <ItemGroup>
     <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="C:\Users\User\Downloads\icons8-new-moon-100.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
