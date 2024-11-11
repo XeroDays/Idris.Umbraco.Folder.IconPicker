@@ -9,11 +9,11 @@
   <PropertyGroup>
     <PackageId>Idris.Umbraco.Folder.IconPicker</PackageId>
     <Product>Idris.Umbraco.Folder.IconPicker</Product>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Title>Folder Icon Picker - Umbraco</Title>
     <Description>You can list all the icons from a folder and use them directly in the composition or document types.</Description>
     <PackageTags>umbraco plugin package</PackageTags>
-    <Authors>Softasium</Authors>
+    <Authors>Softasium, Sayed Muhammad Idrees</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</RepositoryUrl>
     <PackageProjectUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</PackageProjectUrl>
