@@ -42,7 +42,9 @@ jobs:
           name: PluginBuild
 
       - name: Create NuGet package
-        run: dotnet pack -c Release --output ./nupkg
+          working-directory: Idris.Umbraco.Folder.IconPicker
+          run: dotnet pack -c Release --output ../nupkg
+
 
       - name: Save NuGet package
         uses: actions/upload-artifact@v3
