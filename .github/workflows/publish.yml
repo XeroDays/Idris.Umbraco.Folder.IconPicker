@@ -1,9 +1,6 @@
 name: Publish to NuGet
 
-on:
-  push:
-    tags:
-      - 'v*' # Triggers when a new tag starting with 'v' is pushed
+on: push
 
 jobs:
   publish:
@@ -26,8 +23,4 @@ jobs:
 
       - name: Pack the project
         run: dotnet pack Idris.Umbraco.Folder.IconPicker.csproj --configuration Release --output .
-
-      - name: Publish to NuGet
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: dotnet nuget push Idris.Umbraco.Folder.IconPicker.*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
+ 
