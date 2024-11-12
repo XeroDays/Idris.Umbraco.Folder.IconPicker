@@ -22,5 +22,5 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Pack the project
-        run: dotnet pack Idris.Umbraco.Folder.IconPicker.csproj --configuration Release --output .
+        run: dotnet pack Idris.Umbraco.Folder.IconPicker/Idris.Umbraco.Folder.IconPicker.csproj --configuration Release --output .
  
