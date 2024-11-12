@@ -3,7 +3,7 @@ name: Publish to NuGet
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*' # Triggers when a new tag starting with 'v' is pushed
 
 jobs:
   publish:
@@ -18,6 +18,15 @@ jobs:
         with:
           dotnet-version: '8.x' # Adjust to your project's .NET version if needed
 
+      - name: Extract version from tag
+        id: get_version
+        run: echo "##[set-output name=VERSION;]${GITHUB_REF#refs/tags/v}"
+
+      - name: Update .csproj version
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          sed -i "s|<Version>.*</Version>|<Version>${VERSION}</Version>|" Idris.Umbraco.Folder.IconPicker/Idris.Umbraco.Folder.IconPicker.csproj
+
       - name: Restore dependencies
         run: dotnet restore
 
@@ -31,4 +40,3 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: dotnet nuget push Idris.Umbraco.Folder.IconPicker.*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
- 
