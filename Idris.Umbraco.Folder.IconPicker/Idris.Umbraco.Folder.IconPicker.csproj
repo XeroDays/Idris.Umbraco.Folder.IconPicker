@@ -12,7 +12,7 @@
     <Version>1.0.2</Version>
     <Title>Folder Icon Picker - Umbraco</Title>
     <Description>You can list all the icons from a folder and use them directly in the composition or document types.</Description>
-    <PackageTags>umbraco plugin package umbraco-marketplace</PackageTags>
+    <PackageTags>umbraco plugin package umbraco-marketplace foldericon iconpicker</PackageTags>
     <Authors>Softasium, Sayed Muhammad Idrees</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/XeroDays/Idris.Umbraco.Folder.IconPicker</RepositoryUrl>
@@ -21,8 +21,9 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>plugin-icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>New tags added.
-Minor bug fixes</PackageReleaseNotes>
+    <PackageReleaseNotes>- Performance improved
+- Minor bug fixes
+- Code refactoring</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup>
