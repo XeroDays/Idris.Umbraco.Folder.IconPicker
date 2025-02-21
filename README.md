@@ -13,8 +13,8 @@ You can check the nuget package from here : <a href="https://www.nuget.org/packa
 
 ## Gallery
   
- 
-<p><img src="https://raw.githubusercontent.com/XeroDays/Idris.Umbraco.Folder.IconPicker/refs/heads/master/images/ImagesPanel.png" class="img-fluid" alt="Importing with uSync"></p>
+   
+![Selecing icon from folder](https://raw.githubusercontent.com/XeroDays/Idris.Umbraco.Folder.IconPicker/refs/heads/master/images/ImagesPanel.png)
 
 ## Installation
 
