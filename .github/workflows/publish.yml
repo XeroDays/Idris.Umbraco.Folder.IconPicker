@@ -3,66 +3,40 @@ name: Publish to NuGet
 on:
   push:
     tags:
-      - 'v*'  # Triggers only when a version tag (e.g., v1.0.0) is pushed
+      - 'v*' # Triggers when a new tag starting with 'v' is pushed
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Adjust this version to your project
+          dotnet-version: '8.x' # Adjust to your project's .NET version if needed
+
+      - name: Extract version from tag
+        id: get_version
+        run: echo "##[set-output name=VERSION;]${GITHUB_REF#refs/tags/v}"
+
+      - name: Update .csproj version
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          sed -i "s|<Version>.*</Version>|<Version>${VERSION}</Version>|" Idris.Umbraco.Folder.IconPicker/Idris.Umbraco.Folder.IconPicker.csproj
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build the project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release
 
-      - name: Publish artifact
-        run: dotnet publish -c Release -o output
+      - name: Pack the project
+        run: dotnet pack Idris.Umbraco.Folder.IconPicker/Idris.Umbraco.Folder.IconPicker.csproj --configuration Release --output .
 
-      - name: Save build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: PluginBuild
-          path: output
-
-  package:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: PluginBuild
-
-      - name: Create NuGet package
-        run: dotnet pack -c Release --output ./nupkg
-
-      - name: Save NuGet package
-        uses: actions/upload-artifact@v3
-        with:
-          name: PluginPackage
-          path: nupkg
-
-  publish:
-    runs-on: ubuntu-latest
-    needs: package
-    steps:
-      - name: Download NuGet package
-        uses: actions/download-artifact@v3
-        with:
-          name: PluginPackage
-
-      - name: Push package to NuGet
+      - name: Publish to NuGet
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}  # Add your NuGet API key as a GitHub secret
-        run: |
-          dotnet nuget push "nupkg/*.nupkg" \
-          --api-key $NUGET_API_KEY \
-          --source https://api.nuget.org/v3/index.json
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push Idris.Umbraco.Folder.IconPicker.*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
