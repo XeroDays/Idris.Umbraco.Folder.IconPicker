@@ -12,9 +12,9 @@ You can check the nuget package from here : <a href="https://www.nuget.org/packa
 - **Simple Icon Selection**: Users can select a single icon to assign to document types or compositions, improving visual customization and organization.
 
 ## Gallery
+  
  
-<img src="https://github.com/user-attachments/assets/87fefae6-d472-4997-9dfd-43f846cf5984" alt=""/>
-<img src="https://github.com/user-attachments/assets/4da0a200-c5bc-477e-9dc0-b655dda9b70d" alt=""/>
+<p><img src="https://raw.githubusercontent.com/XeroDays/Idris.Umbraco.Folder.IconPicker/refs/heads/master/images/ImagesPanel.png" class="img-fluid" alt="Importing with uSync"></p>
 
 ## Installation
 
