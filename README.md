@@ -3,7 +3,7 @@
 
 **Folder Icon Picker** is an Umbraco plugin that enables users to select icons from a specified folder containing images and SVG files. This tool integrates seamlessly into the Umbraco CMS, allowing users to browse and select icons directly for document types or compositions.
 
-You can check the nuget package from here : <a href="https://www.nuget.org/packages/Idris.Umbraco.Folder.IconPicker/#readme-body-tab">Click here</a>
+You can check the nuget package from here : <a href="https://www.nuget.org/packages/Idris.Umbraco.Folder.IconPicker/#readme-body-tab" target="_blank">Click here</a>
 
 ## Features
 
